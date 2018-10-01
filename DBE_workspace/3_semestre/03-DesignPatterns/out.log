@@ -1,0 +1,4 @@
+2018-02-21 19:48:22 INFO  PropertiesSingleton:27 - Carregando o arquivo de propriedade do sistema.
+2018-02-21 19:49:11 TRACE PropertiesSingleton:23 - Criando o objeto properties.
+2018-02-21 19:49:11 INFO  PropertiesSingleton:27 - Carregando o arquivo de propriedade do sistema.
+2018-02-21 19:49:11 DEBUG PropertiesSingleton:35 - Retornando as configurações do sistema.

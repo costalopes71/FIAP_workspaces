@@ -1,0 +1,7 @@
+Exercicios revisão para PS
+
+1) Crie um App, no qual, para cada método do ciclo de vida da Activity, seja exibido um Toast.
+
+2) Crie um App com vários Buttons, e para cada clique exiba um AlertDialog diferente.
+
+3) Internacionalize as Strings do App 02.

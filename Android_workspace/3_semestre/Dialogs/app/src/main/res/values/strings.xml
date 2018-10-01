@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Dialogs</string>
+    <string name="abrir_alert_dialog">Abrir Alert Dialog</string>
+    <string name="importante">Importante</string>
+    <string name="deseja_excluir_registro">Você desja excluir o registro?</string>
+    <string name="sim">SIM</string>
+    <string name="excluido_com_sucesso">Registro excluido com sucesso!</string>
+    <string name="nao">NÃO</string>
+    <string name="abrir_progress_dialog">Abrir Progress Dialog</string>
+    <string name="aguarde">AGUARDE</string>
+    <string name="processando_dados">Estamos processando seus dados...</string>
+    <string name="abrir_date_picker_dialog">Abrir Date Picker Dialog</string>
+</resources>

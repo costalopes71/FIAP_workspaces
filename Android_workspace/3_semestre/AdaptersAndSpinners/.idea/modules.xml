@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/AdaptersAndSpinners.iml" filepath="$PROJECT_DIR$/AdaptersAndSpinners.iml" />
+      <module fileurl="file://D:\joao\android_workspace\Android_FIAP\AdaptersAndSpinners\AdaptersAndSpinners.iml" filepath="D:\joao\android_workspace\Android_FIAP\AdaptersAndSpinners\AdaptersAndSpinners.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://D:\joao\android_workspace\Android_FIAP\AdaptersAndSpinners\app\app.iml" filepath="D:\joao\android_workspace\Android_FIAP\AdaptersAndSpinners\app\app.iml" />
+    </modules>
+  </component>
+</project>

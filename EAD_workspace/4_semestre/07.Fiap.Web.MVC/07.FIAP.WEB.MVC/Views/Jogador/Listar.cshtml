@@ -1,0 +1,51 @@
+﻿@model List<_07.FIAP.WEB.MVC.Models.Jogador>
+
+@{
+    ViewBag.Title = "Listar";
+}
+
+<h2>Listar Jogador</h2>
+
+@if (TempData["msgSucesso"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["msgSucesso"]
+    </div>
+}
+
+<table class="table table-hover">
+
+    <thead>
+        <th>Nome</th>
+        <th>Data Nascimento</th>
+        <th>Posição</th>
+        <th>Time</th>
+    </thead>
+
+    <tbody>
+        @foreach (var jogador in Model)
+        {
+            <tr>
+                <td>@jogador.Nome</td>
+                <td>@jogador.DataNascimento.ToShortDateString()</td>
+                <td>@jogador.Posicao</td>
+                <td>@jogador.Time.Nome</td>
+            </tr>
+        }
+
+
+    </tbody>
+
+</table>
+
+@using (Html.BeginForm("Listar", "Jogador", FormMethod.Get, new {@class = "form-inline" }))
+{
+    @Html.DropDownList(
+        "codigo", 
+        ViewBag.times as SelectList,
+        "Selecione",
+        new { @class = "form-control"})
+
+
+    <input type="submit" value="Buscar" class="btn btn-primary" style="margin-left : 10px;"/>
+}

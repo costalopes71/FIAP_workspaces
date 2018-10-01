@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<ui:composition template="_template.xhtml">
+	
+	<ui:define name="titulo">Listar | Health</ui:define>
+	
+	<ui:define name="corpo">
+		
+		<h1>Lista de Pacientes</h1>
+		<h:messages/>
+		
+		<h:dataTable value="#{pacienteBean.pacientes}" var="paciente" styleClass="table">
+		
+			<h:column>
+				<f:facet name="header">Código</f:facet>
+				#{paciente.id}
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">Nome</f:facet>
+				#{paciente.nome}			
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">Data Nascimento</f:facet>
+				<h:outputText value="#{paciente.dataNascimento.time}">
+					<f:convertDateTime pattern="dd/MM/yyyy" timeZone="America/Sao_Paulo"/>
+				</h:outputText>			
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">Doador</f:facet>
+				#{paciente.doador ? "SIM" : "NÃO"}
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">Ações</f:facet>
+				<h:form>
+					<h:commandLink action="paciente" value="Editar" styleClass="btn btn-primary btn-sm">
+						<f:setPropertyActionListener value="#{paciente}" target="#{pacienteBean.paciente}"/>
+					</h:commandLink>
+					
+					<h:commandLink value="Excluir" action="#{pacienteBean.deletar(paciente.id)}" styleClass="btn btn-danger btn-sm m-2"/>
+				</h:form>
+			</h:column>
+			
+		</h:dataTable>
+		
+	</ui:define>
+
+</ui:composition>
+
+</html>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margem_do_titulo">10dp</dimen>
+    <dimen name="tamanho_titulo">20sp</dimen>
+    <dimen name="margem_btn_calc">20dp</dimen>
+    <dimen name="tamanho_preco">30sp</dimen>
+    <dimen name="margem_btn_mafia">38dp</dimen>
+    <dimen name="tamanho_texto_btn_saiba">8sp</dimen>
+    <dimen name="margem_top_btns">10dp</dimen>
+    <dimen name="margem_left_btns_saiba">20dp</dimen>
+    <dimen name="tamanho_caixa">300dp</dimen>
+    <dimen name="margem_caixa">70dp</dimen>
+    <dimen name="margem_esq_caixa">40dp</dimen>
+    <dimen name="padding_paginas_produtos">10dp</dimen>
+    <dimen name="tamanho_titulo_prods">25sp</dimen>
+    <dimen name="margem_top_prods">20dp</dimen>
+    <dimen name="largura_imagem_produto">200dp</dimen>
+    <dimen name="altura_imagem_produto">200dp</dimen>
+    <dimen name="tamanho_peq_img_prods">50dp</dimen>
+    <dimen name="lag_img_peq">50dp</dimen>
+</resources>

@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+
+<ui:composition template="_template.xhtml">
+	<ui:define name="corpo">
+		<h1>Paciente:</h1>
+
+		<h:messages />
+
+		<h:form>
+
+			<h:inputHidden value="#{pacienteBean.paciente.codigo}" />
+
+			<div class="form-group">
+				<h:outputLabel value="Nome" for="nome" />
+				<h:inputText value="#{pacienteBean.paciente.nome}" id="nome" styleClass="form-control" required="true"
+					requiredMessage="Campo nome é obrigatório.">
+					<f:validateLength minimum="3" maximum="50"/>
+				</h:inputText>
+				<h:message for="nome" styleClass="text-danger"/>
+			</div>
+
+			<div class="form-group">
+				<h:outputLabel value="Doador" for="doador" />
+				<h:selectBooleanCheckbox value="#{pacienteBean.paciente.doador}"
+					id="doador" />
+			</div>
+
+			<div class="form-group">
+				<h:outputLabel value="Data de Nascimento: " for="dataNascimento" />
+				<h:inputText value="#{pacienteBean.paciente.dataNascimento.time}"
+					id="dataNascimento" styleClass="form-control">
+					<f:convertDateTime pattern="dd/MM/yyyy"
+						timeZone="America/Sao_Paulo" />
+				</h:inputText>
+				<h:message for="dataNascimento" styleClass="text-danger"/>
+			</div>
+
+			<h:commandButton action="#{pacienteBean.salvar}" value="Salvar"
+				styleClass="btn btn-primary brn-sm" />
+			<dir>
+				<h:link outcome="lista-paciente">Lista de Pacientes</h:link>
+			</dir>
+		</h:form>
+
+	</ui:define>
+</ui:composition>
+
+</html>

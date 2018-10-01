@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/chkLanche01"
+            android:layout_marginTop="25dp"/>
+
+        <ImageView
+            android:layout_width="@dimen/img_dimensao"
+            android:layout_height="@dimen/img_dimensao"
+            android:src="@drawable/burguer1"
+            android:id="@+id/imgLanche01"
+            android:layout_toRightOf="@id/chkLanche01"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hamburguao_da_tia"
+            android:id="@+id/txtNomeLanche01"
+            android:layout_toRightOf="@id/imgLanche01"
+            android:layout_marginTop="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/quinze_reais"
+            android:id="@+id/txtPrecoLanche01"
+            android:layout_toRightOf="@id/imgLanche01"
+            android:layout_below="@id/txtNomeLanche01"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/detalhes"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="15dp"
+            android:onClick="abrirDetalhes"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/chkLanche02"
+            android:layout_marginTop="25dp"/>
+
+        <ImageView
+            android:layout_width="@dimen/img_dimensao"
+            android:layout_height="@dimen/img_dimensao"
+            android:src="@drawable/burguer1"
+            android:id="@+id/imgLanche02"
+            android:layout_toRightOf="@id/chkLanche02"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hamburguao_do_ze"
+            android:id="@+id/txtNomeLanche02"
+            android:layout_toRightOf="@id/imgLanche02"
+            android:layout_marginTop="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/quinze_reais"
+            android:id="@+id/txtPrecoLanche02"
+            android:layout_toRightOf="@id/imgLanche02"
+            android:layout_below="@id/txtNomeLanche02"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/detalhes"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="15dp"
+            android:onClick="abrirDetalhes"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/chkLanche03"
+            android:layout_marginTop="25dp"/>
+
+        <ImageView
+            android:layout_width="@dimen/img_dimensao"
+            android:layout_height="@dimen/img_dimensao"
+            android:src="@drawable/burguer1"
+            android:id="@+id/imgLanche03"
+            android:layout_toRightOf="@id/chkLanche03"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hamburguao_do_jaum"
+            android:id="@+id/txtNomeLanche03"
+            android:layout_toRightOf="@id/imgLanche03"
+            android:layout_marginTop="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/quinze_reais"
+            android:id="@+id/txtPrecoLanche03"
+            android:layout_toRightOf="@id/imgLanche03"
+            android:layout_below="@id/txtNomeLanche03"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/detalhes"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="15dp"
+            android:onClick="abrirDetalhes"/>
+
+    </RelativeLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/comprar"
+        android:onClick="comprar"/>
+
+</LinearLayout>

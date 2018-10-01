@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:ui="http://java.sun.com/jsf/facelets" 
+      xmlns:h="http://java.sun.com/jsf/html" 
+      xmlns:f="http://java.sun.com/jsf/core">
+
+	<ui:composition template="_template.xhtml">
+		
+		<ui:define name="titulo">Listar | Venda</ui:define>
+		
+		<ui:define name="corpo">
+		
+			<h1>Lista de Vendas</h1>
+			<h:messages styleClass="text-danger"/>
+			
+			<h:dataTable styleClass="table" value="#{vendaBean.vendas}" var="venda">
+				
+				<h:column>
+					<f:facet name="header">ID</f:facet>
+					#{venda.id}						
+				</h:column>
+			
+				<h:column>
+					<f:facet name="header">Descrição</f:facet>
+					#{venda.descricao}						
+				</h:column>
+			
+				<h:column>
+					<f:facet name="header">Valor</f:facet>
+					#{venda.valor}						
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header">Data Venda</f:facet>
+					<h:outputText value="#{venda.data.time}">
+						<f:convertDateTime pattern="dd/MM/yyyy" timeZone="America/Sao_Paulo"/>
+					</h:outputText>			
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header">Ações</f:facet>
+					<h:form>
+						<h:commandButton action="#{vendaBean.deletar(venda.id)}" value="Deletar" styleClass="btn btn-danger btn-sm"/>
+						
+						<h:commandButton action="venda" value="Editar" styleClass="btn btn-primary btn-sm m-2">
+							<f:setPropertyActionListener value="#{venda}" target="#{vendaBean.venda}"/>
+						</h:commandButton>			
+					
+					</h:form>		
+				</h:column>
+							
+			</h:dataTable>
+		
+		</ui:define>
+		
+	</ui:composition>
+   
+   
+</html>

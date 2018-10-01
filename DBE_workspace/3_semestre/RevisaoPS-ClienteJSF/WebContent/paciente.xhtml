@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<ui:composition template="_template.xhtml">
+
+	<ui:define name="titulo">Paciente | Fiap Health</ui:define>
+	
+	<ui:define name="corpo">
+	
+		<h1>Paciente</h1>
+		<h:messages/>
+		
+		<h:form>
+			<h:inputHidden value="#{pacienteBean.paciente.id}" />
+			
+			<div class="form-group">
+				<h:outputLabel for="nome" value="Nome"/>
+				<h:inputText value="#{pacienteBean.paciente.nome}" styleClass="form-control" required="true" requiredMessage="O campo nome é obrigatório"
+					id="nome">
+					<f:validateLength minimum="3" maximum="100"/>				
+				</h:inputText>
+				<h:message for="nome" styleClass="text-danger"/>
+			</div>
+		
+			<div class="form-group">
+				<h:outputLabel value="Data Nascimento" for="dataNascimento"/>
+				<h:inputText value="#{pacienteBean.paciente.dataNascimento.time}" required="true" requiredMessage="Campo data de nascimento é obrigatório"
+					id="dataNascimento" styleClass="form-control">
+					<f:convertDateTime pattern="dd/MM/yyyy" timeZone="America/Sao_Paulo"/>
+				</h:inputText>
+				<h:message for="dataNascimento" styleClass="text-danger"/>
+			</div>
+		
+			<div class="form-group">
+				<h:outputLabel value="Doador" for="doador"/>
+				<h:selectBooleanCheckbox value="#{pacienteBean.paciente.doador}" id="doador"/>
+			</div>
+		
+			<h:commandButton action="#{pacienteBean.salvar}" value="Salvar" styleClass="btn btn-primary btn-sm"/>
+			<div>
+				<h:link outcome="listar-paciente">Lista de Pacientes</h:link>
+			</div>
+			
+		</h:form>
+		
+	
+	</ui:define>
+
+</ui:composition>
+
+</html>

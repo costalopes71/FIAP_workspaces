@@ -1,0 +1,26 @@
+{
+    "logs": [
+        {
+            "outputFile": "F:\\android_workspaces\\RevisaoDados\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en\\values-en.xml",
+            "map": [
+                {
+                    "source": "F:\\android_workspaces\\RevisaoDados\\app\\src\\main\\res\\values-en\\strings.xml",
+                    "from": {
+                        "startLines": "1,2",
+                        "startColumns": "4,4",
+                        "startOffsets": "17,64",
+                        "endColumns": "45,40",
+                        "endOffsets": "58,100"
+                    },
+                    "to": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,101",
+                        "endColumns": "45,40",
+                        "endOffsets": "96,137"
+                    }
+                }
+            ]
+        }
+    ]
+}

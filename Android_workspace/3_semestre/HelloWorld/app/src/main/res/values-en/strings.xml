@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="label_nome">Name:</string>
+    <string name="btn_salvar">SAVE</string>
+    <string name="seu_nome_eh">Your name is:</string>
+</resources>

@@ -1,0 +1,8 @@
+<resources>
+    <string name="hamburguao_da_tia">Tia hamburguer</string>
+    <string name="quinze_reais">$15,00</string>
+    <string name="detalhes">Details</string>
+    <string name="hamburguao_do_ze">Zé Hamburguer</string>
+    <string name="hamburguao_do_jaum">Jaum Hamburguer</string>
+    <string name="comprar">BUY</string>
+</resources>

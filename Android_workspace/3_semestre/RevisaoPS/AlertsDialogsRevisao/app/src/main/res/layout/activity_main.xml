@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/padding_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/deletar_item"
+        android:onClick="deletar"
+        android:id="@+id/btnDeletar"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnDeletar"
+        android:text="@string/data_consulta"
+        android:layout_centerInParent="true"
+        android:onClick="escolherData"
+        android:id="@+id/btnDataConsulta"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/processar_arquivos"
+        android:layout_below="@id/btnDataConsulta"
+        android:onClick="processarArquivos"
+        android:id="@+id/btnProcessaArquivos"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/escolher_horario"
+        android:layout_below="@id/btnProcessaArquivos"
+        android:onClick="escolherHorario"
+        android:id="@+id/btnEscolherHorario"/>
+
+</RelativeLayout>

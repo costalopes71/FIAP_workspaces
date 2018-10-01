@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="titulos_principais">24sp</dimen>
+    <dimen name="activities_padding">20dp</dimen>
+    <dimen name="margem_superior_secoes">20dp</dimen>
+</resources>

@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Orcamento</string>
+    <string name="material_que_deseja">Informe o material que deseja:</string>
+    <string name="piso_branco">Piso Branco Baixo Brilho</string>
+    <string name="piso_albania_45x45">Piso Albania 45x45</string>
+    <string name="porcelanato_perlato">Porcelanato Perlato Branco</string>
+    <string name="revestimento_mosaico">Revestimento mosaico</string>
+    <string name="informe_medida">Informe a medida em m2</string>
+    <string name="ultra_frete">Ultra frete mega rápido</string>
+    <string name="calcular">CALCULAR</string>
+    <string name="valor_inicial">10</string>
+    <string name="preco_inicial">$ 249,00</string>
+</resources>

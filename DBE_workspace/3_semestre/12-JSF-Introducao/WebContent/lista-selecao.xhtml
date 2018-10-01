@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="_template.xhtml">
+
+	<ui:define name="titulo">Lista de Seleções</ui:define>
+	<ui:define name="corpo">
+		<h1>Lista de Seleções</h1>
+
+		<h:messages />
+
+		<h:dataTable var="selecao" value="#{selecaoBean.selecoes}"
+			styleClass="table">
+
+			<h:column>
+				<f:facet name="header">Código</f:facet>
+				#{selecao.codigo}
+			</h:column>
+
+			<h:column>
+				<f:facet name="header">Nome</f:facet>
+				#{selecao.pais}
+			</h:column>
+
+			<h:column>
+				<f:facet name="header">Nº Mundiais</f:facet>
+				#{selecao.numeroMundiais}
+			</h:column>
+
+			<h:column>
+				<f:facet name="header">Classificado</f:facet>
+				#{selecao.classificado?"SIM" : "NÃO"}
+			</h:column>
+
+			<h:column>
+				<f:facet name="header">Ações</f:facet>
+				<h:form>
+					<h:commandLink action="cadastrar-selecao" value="Alterar"
+						styleClass="btn btn-primary btn-sm">
+						<f:setPropertyActionListener value="#{selecao}"
+							target="#{selecaoBean.selecao}" />
+					</h:commandLink>
+					<h:commandLink action="#{selecaoBean.deletar(selecao.codigo)}"
+						value="Excluir" styleClass="btn btn-danger btn-sm" />
+				</h:form>
+			</h:column>
+
+		</h:dataTable>
+
+	</ui:define>
+</ui:composition>
+
+</html>

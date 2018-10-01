@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">RevisaoPetShop</string>
+    <string name="boder_collier">Boder Collie R$800,00</string>
+    <string name="pit_bull">Pit Bull R$750,00</string>
+    <string name="femea">Fêmea</string>
+    <string name="adestrado">Adestrado</string>
+    <string name="calcular">CALCULAR</string>
+    <string name="valor_total">R$00,00</string>
+</resources>

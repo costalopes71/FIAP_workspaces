@@ -1,0 +1,51 @@
+﻿@model Fiap06.Wbe.MVC.Models.Animal
+
+@{
+                /**/
+
+                ViewBag.Title = "Cadastrar Animal";
+}
+
+<h2>Cadastrar Animal</h2>
+
+@if (TempData["msg"] != null)
+{
+    <div class="alert alert-success alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <strong>@TempData["msg"]</strong>
+    </div>
+}
+
+@using (Html.BeginForm())
+{
+
+    <div class="form-group">
+        @Html.LabelFor(animal => animal.Nome)
+        @Html.TextBoxFor(animal => animal.Nome, new { @class = "form-control", placeholder = "digite o nome do animal" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(animal => animal.Peso)
+        @Html.TextBoxFor(animal => animal.Peso, new { @class = "form-control", placeholder = "Digite o peso do animal" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(animal => animal.Raca)
+        @Html.TextBoxFor(animal => animal.Raca, new { @class = "form-control", placeholder = "digite a raça" })
+    </div>
+
+    <div class="form-group">
+        @Html.CheckBoxFor(animal => animal.Castrado)
+        @Html.LabelFor(animal => animal.Castrado)
+    </div>
+    <div>
+        <input type="submit" value="CADASTRAR" class="btn btn-default" />
+    </div>
+
+ 
+
+}
+
+

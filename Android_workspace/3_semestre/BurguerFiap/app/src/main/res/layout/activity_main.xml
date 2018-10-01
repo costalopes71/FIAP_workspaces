@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/fundo_hamburgueria"
+        android:scaleType="centerCrop"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/cor_caixa"
+        android:alpha="0.6">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/bem_vindo_a_burguer_fiap"
+            android:textSize="@dimen/tamanho_titulo"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:layout_marginTop="@dimen/margem_do_titulo"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="@dimen/tamanho_caixa"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/cor_caixa"
+        android:alpha="0.8"
+        android:layout_marginTop="@dimen/margem_caixa"
+        android:layout_marginLeft="@dimen/margem_esq_caixa">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/the_legend_r_25_90"
+                android:id="@+id/chkTheLegend"
+                android:layout_marginTop="@dimen/margem_top_btns"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/saiba_mais"
+                android:textSize="@dimen/tamanho_texto_btn_saiba"
+                android:layout_toRightOf="@id/chkTheLegend"
+                android:layout_marginLeft="@dimen/margem_left_btns_saiba"
+                android:onClick="saibamaisLegend"/>
+
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="@dimen/lag_img_peq"
+            android:layout_height="@dimen/tamanho_peq_img_prods"
+            android:src="@drawable/legend"
+            android:layout_gravity="center"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/batata_frita_r_12_90"
+                android:id="@+id/chkBatataFrita"
+                android:layout_marginTop="@dimen/margem_top_btns"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/saiba_mais"
+                android:textSize="@dimen/tamanho_texto_btn_saiba"
+                android:layout_toRightOf="@id/chkBatataFrita"
+                android:layout_marginLeft="@dimen/margem_left_btns_saiba"
+                android:onClick="saibamaisBatata"/>
+
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="@dimen/lag_img_peq"
+            android:layout_height="@dimen/tamanho_peq_img_prods"
+            android:src="@drawable/fritas"
+            android:layout_gravity="center"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/la_mafia_r_28_90"
+                android:id="@+id/chkLaMafia"
+                android:layout_marginTop="@dimen/margem_top_btns"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/saiba_mais"
+                android:textSize="@dimen/tamanho_texto_btn_saiba"
+                android:layout_toRightOf="@id/chkLaMafia"
+                android:layout_marginLeft="@dimen/margem_btn_mafia"
+                android:onClick="saibamaisMafia"/>
+
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="@dimen/lag_img_peq"
+            android:layout_height="@dimen/tamanho_peq_img_prods"
+            android:src="@drawable/mafia2"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/calcular_total"
+            android:layout_marginTop="@dimen/margem_btn_calc"
+            android:onClick="calcular"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/r_0_00"
+            android:textSize="@dimen/tamanho_preco"
+            android:layout_marginTop="@dimen/margem_btn_calc"
+            android:textAlignment="center"
+            android:id="@+id/txtPrecoFinal"/>
+
+    </LinearLayout>
+
+
+</FrameLayout>

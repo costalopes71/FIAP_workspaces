@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<ui:composition template="_template.xhtml">
+	
+	<ui:define name="titulo">Cadastrar Venda</ui:define>
+	
+	<ui:define name="corpo">
+		
+		<h1>Cadastrar Vendas</h1>
+		<h:messages/>
+		
+		<h:form>
+			
+			<h:inputHidden value="#{vendaBean.venda.id}"/>
+			
+			<div class="form-group">
+				<h:outputLabel for="descricao" value="Descrição"/>
+				<h:inputText styleClass="form-control" value="#{vendaBean.venda.descricao}" required="true"
+					requiredMessage="Campo descrição é obrigatório." id="descricao">
+					<f:validateLength minimum="3" maximum="100"/>
+				</h:inputText>
+				<h:message for="descricao" styleClass="text-danger"/>
+			</div>
+			
+			<div class="form-group">
+				<h:outputLabel for="valor" value="Valor"/>
+				<h:inputText styleClass="form-control" required="true" requiredMessage="Campo valor obrigatório"
+					value="#{vendaBean.venda.valor}" id="valor" converterMessage="O campo aceita apenas números (Ex: 20.99)">
+				</h:inputText>
+				<h:message for="valor" styleClass="text-danger"/>
+			</div>
+		
+			<div class="form-group">
+				<h:outputLabel for="data" value="Data venda"/>
+				<h:inputText value="#{vendaBean.venda.data.time}" id="data" required="true" requiredMessage="Campo data é obrigatório."
+					styleClass="form-control" converterMessage="Data está no formato errado. Ex: 20/01/2001 (dd/MM/yyyy)">
+					<f:convertDateTime pattern="dd/MM/yyyy" timeZone="America/Sao_Paulo"/>
+				</h:inputText>
+				<h:message for="data" styleClass="text-danger"/>
+			</div>
+		
+			<h:commandButton value="Salvar" action="#{vendaBean.salvar}"/>
+			
+		</h:form>
+
+	</ui:define>
+
+</ui:composition>
+</html>

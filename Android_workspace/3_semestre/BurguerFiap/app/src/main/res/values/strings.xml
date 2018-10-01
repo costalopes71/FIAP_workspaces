@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">BurguerFiap</string>
+    <string name="bem_vindo_a_burguer_fiap">Bem vindo a BURGUER FIAP</string>
+    <string name="calcular_total">CALCULAR TOTAL</string>
+    <string name="r_0_00">R$ 0,00</string>
+    <string name="la_mafia_r_28_90">La Mafia R$ 28,90</string>
+    <string name="saiba_mais">saiba mais...</string>
+    <string name="batata_frita_r_12_90">Batata Frita R$ 12,90</string>
+    <string name="the_legend_r_25_90">The Legend R$ 25,90</string>
+    <string name="por_o_de_batata_fritas">Porção de Batata Fritas</string>
+    <string name="pre_o_r_12_90">Preço: R$12,90</string>
+    <string name="descri_o_por_o_de_batata_frita_de_300_gramas_as_batatas_mais_gostosas_do_mundo">Descrição: porção de batata frita de 300 gramas. As batatas mais gostosas do mundo!</string>
+    <string name="la_mafia_buguer">La Mafia Buguer</string>
+    <string name="r_28_90">R$28,90</string>
+    <string name="delicioso_hamburguer_de_picanha_de_300_gramas_com_alface_americana_tomate_queijo_prato_e_nosso_delicioso_molho_picante">Delicioso hamburguer de picanha de 300 gramas com alface americana, tomate, queijo prato e nosso delicioso molho picante!</string>
+    <string name="the_legend_burguer">The Legend Burguer</string>
+    <string name="r_25_90">R$25,90</string>
+    <string name="o_nosso_maior_hamburguer_dois_hamburguers_de_picanha_de_200_gramas_alface_tomate_queijo_cheddar_e_nosso_molho_especial">O nosso maior hamburguer! Dois hamburguers de picanha de 200 gramas, alface, tomate, queijo cheddar e nosso molho especial!</string>
+</resources>

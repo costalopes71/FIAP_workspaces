@@ -1,0 +1,49 @@
+﻿@model _07.FIAP.WEB.MVC.Models.Time
+
+@{
+    ViewBag.Title = "Cadastrar";
+}
+
+<h2>Cadastrar Time</h2>
+
+@if (TempData["msgSucesso"] != null)
+{
+    <div class="alert alert-success">
+        <strong>@TempData["msgSucesso"]</strong>
+    </div>
+}
+
+
+@using (Html.BeginForm())
+{
+
+    <div class="form-group">
+        @Html.LabelFor(time => time.Nome)
+        @Html.TextBoxFor(time => time.Nome, new { @class = "form-control", placeholder = "Digite o nome do Time" })
+    </div>
+
+    <div class="form-group">
+        @Html.CheckBoxFor(time => time.Mundial)
+        @Html.LabelFor(time => time.Mundial)
+    </div>
+
+    <fieldset>
+        <legend>Técnico</legend>
+
+        <div class="form-group">
+            @Html.LabelFor(time => time.Tecnico.Nome)
+            @Html.TextBoxFor(time => time.Tecnico.Nome, new { @class = "form-control", placeholder = "Digite o nome do técnico" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(time => time.Tecnico.Salario)
+            @Html.TextBoxFor(time => time.Tecnico.Salario, new { @class = "form-control", placeholder = "Digite o salário do técnico" })
+        </div>
+
+    </fieldset>
+
+    <div>
+        <input type="submit" value="CADASTRAR" class="btn btn-default" />
+    </div>
+
+}

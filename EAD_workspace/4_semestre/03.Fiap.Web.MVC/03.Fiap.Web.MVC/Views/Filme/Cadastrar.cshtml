@@ -1,0 +1,53 @@
+﻿@model _03.Fiap.Web.MVC.Models.Filme
+@{
+    ViewBag.Title = "Home";
+}
+
+<h2>Home controller</h2>
+
+@TempData["msg"]
+@ViewBag.titulo
+<br />
+
+@if (Model != null)
+{
+<ul>
+    <li>@Model.Genero</li>
+    <li>@Model.Nome</li>
+    <li>@Model.DataLancamento</li>
+    <li>@Model.Legendado</li>
+</ul>
+}
+
+<form action="/filme/cadastrar" method="post">
+
+    <div class="form-group">
+        <label for="nome">Nome</label>
+        <input type="text" name="nome" id="nome" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label for="dataLancamento">Data Lançamento</label>
+        <input type="text" name="dataLancamento" id="dataLancamento" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label for="genero">Genero</label>
+        <select name="genero" class="form-control" id="genero">
+            <option value="AÇÃO" label="Ação" />
+            <option value="COMÉDIA" label="Comédia" />
+            <option value="DRAMA" label="Drama" />
+        </select>
+    </div>
+
+    <div class="form-group">
+        <input type="checkbox" name="legendado" id="legendado" class="checkbox" value="true"/>
+        <label for="legendado">Legendado</label>
+    </div>
+
+    <div>
+        <button type="submit" class="btn btn-primary">Cadastrar</button>
+    </div>
+
+</form>
+

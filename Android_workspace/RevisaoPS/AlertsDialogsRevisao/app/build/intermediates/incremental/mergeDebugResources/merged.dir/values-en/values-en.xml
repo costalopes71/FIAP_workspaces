@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="acao_cancelada">Action canceled.</string>
+    <string name="aguarde">Wait</string>
+    <string name="app_name">AlertsDialogsRevisao</string>
+    <string name="atencao">ATTENTION!</string>
+    <string name="confirma_deletar">Do you really want to delete the selected item?</string>
+    <string name="data_consulta">Choose the date</string>
+    <string name="deletar_item">Delete item</string>
+    <string name="dia_escolhido">Choosen day:</string>
+    <string name="escolher_horario">Choose the time: </string>
+    <string name="horario_escolhido">Choosen time: </string>
+    <string name="item_deletado_sucesso">Item deleted sucessfuly!</string>
+    <string name="nao">NO</string>
+    <string name="processando_arquivos">Processing files...</string>
+    <string name="processar_arquivos">Process files</string>
+    <string name="sim">YES</string>
+</resources>

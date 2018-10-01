@@ -1,0 +1,7 @@
+D:\joao\EnterpriseApplicationDevelopment\4_semestre\Fiap.Exercicio1\Fiap.Exercicio1.UI\bin\Debug\Fiap.Exercicio1.UI.exe.config
+D:\joao\EnterpriseApplicationDevelopment\4_semestre\Fiap.Exercicio1\Fiap.Exercicio1.UI\bin\Debug\Fiap.Exercicio1.UI.exe
+D:\joao\EnterpriseApplicationDevelopment\4_semestre\Fiap.Exercicio1\Fiap.Exercicio1.UI\bin\Debug\Fiap.Exercicio1.UI.pdb
+D:\joao\EnterpriseApplicationDevelopment\4_semestre\Fiap.Exercicio1\Fiap.Exercicio1.UI\obj\Debug\Fiap.Exercicio1.UI.csprojAssemblyReference.cache
+D:\joao\EnterpriseApplicationDevelopment\4_semestre\Fiap.Exercicio1\Fiap.Exercicio1.UI\obj\Debug\Fiap.Exercicio1.UI.csproj.CoreCompileInputs.cache
+D:\joao\EnterpriseApplicationDevelopment\4_semestre\Fiap.Exercicio1\Fiap.Exercicio1.UI\obj\Debug\Fiap.Exercicio1.UI.exe
+D:\joao\EnterpriseApplicationDevelopment\4_semestre\Fiap.Exercicio1\Fiap.Exercicio1.UI\obj\Debug\Fiap.Exercicio1.UI.pdb

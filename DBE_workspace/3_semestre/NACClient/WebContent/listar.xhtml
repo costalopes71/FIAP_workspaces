@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:ui="http://java.sun.com/jsf/facelets" 
+      xmlns:h="http://java.sun.com/jsf/html" 
+      xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<title>Listar Imovel | FIAP</title>
+</h:head>
+   
+<h:body>
+
+	<h1>Listar Imóvel</h1>
+	
+	<h:messages/>
+	
+	<h:dataTable value="#{imovelBean.lista}" var="imovel">
+	
+		<h:column>
+			<f:facet name="header">CÓDIGO</f:facet >
+			#{imovel.codigo}
+		</h:column>
+		
+		<h:column>
+			<f:facet name="header">ENDEREÇO</f:facet >
+			#{imovel.endereco}
+		</h:column>
+		
+		<h:column>
+			<f:facet name="header">PREÇO</f:facet >
+			#{imovel.preco}
+		</h:column>
+		
+		<h:column>
+			<f:facet name="header">RESIDENCIAL</f:facet >
+			#{imovel.residencial ? "Sim" : "Não"}
+		</h:column>
+		
+	</h:dataTable>
+
+</h:body>   
+</html>

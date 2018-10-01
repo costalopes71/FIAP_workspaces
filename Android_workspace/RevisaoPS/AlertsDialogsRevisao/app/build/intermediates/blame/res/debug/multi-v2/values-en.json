@@ -1,0 +1,26 @@
+{
+    "logs": [
+        {
+            "outputFile": "F:\\android_workspaces\\AlertsDialogsRevisao\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en\\values-en.xml",
+            "map": [
+                {
+                    "source": "F:\\android_workspaces\\AlertsDialogsRevisao\\app\\src\\main\\res\\values-en\\strings.xml",
+                    "from": {
+                        "startLines": "13,5,1,10,11,3,2,7,14,15,12,9,6,4,8",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "710,251,17,492,540,130,76,363,771,835,634,456,293,189,419",
+                        "endColumns": "59,40,57,46,92,57,52,54,62,60,74,34,68,60,35",
+                        "endOffsets": "765,287,70,534,628,183,124,413,829,891,704,486,357,245,450"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,115,156,214,261,354,412,465,520,583,644,719,754,823,884",
+                        "endColumns": "59,40,57,46,92,57,52,54,62,60,74,34,68,60,35",
+                        "endOffsets": "110,151,209,256,349,407,460,515,578,639,714,749,818,879,915"
+                    }
+                }
+            ]
+        }
+    ]
+}

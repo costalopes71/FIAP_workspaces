@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/padding_paginas_produtos"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/la_mafia_buguer"
+        android:textAlignment="center"
+        android:textSize="@dimen/tamanho_titulo_prods"/>
+
+    <ImageView
+        android:layout_width="@dimen/largura_imagem_produto"
+        android:layout_height="@dimen/altura_imagem_produto"
+        android:src="@drawable/mafia2"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/margem_top_prods"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/r_28_90"
+        android:textAlignment="center"
+        android:textSize="@dimen/tamanho_titulo_prods"
+        android:layout_marginTop="@dimen/margem_top_prods"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/delicioso_hamburguer_de_picanha_de_300_gramas_com_alface_americana_tomate_queijo_prato_e_nosso_delicioso_molho_picante"
+        android:textAlignment="center"
+        android:textSize="@dimen/tamanho_titulo_prods"
+        android:layout_marginTop="@dimen/margem_top_prods"/>
+
+</LinearLayout>
