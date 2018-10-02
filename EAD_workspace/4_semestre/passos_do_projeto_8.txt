@@ -1,0 +1,13 @@
+- criamos o projeto
+- instalamos o EntityFramework
+- criamos os Models e relacionamentos
+- criamos o DbContext
+- Configuramos o web.config (banco) e o global.asax (criacao do bd)
+- criamos a interface do repository e a implementacao (lembrar que ao criar a interface ela NAO cria publica, lembrar de mudar para publica)
+- criamos o UnitOfWork
+
+Hoje:
+- cadastrar o responsavel
+- criar o IDependenteRepository e o DependenteRepository
+- adicionar o IDependenteRepository no UnitOfWork
+- Cadastrar um dependente com um responsavel

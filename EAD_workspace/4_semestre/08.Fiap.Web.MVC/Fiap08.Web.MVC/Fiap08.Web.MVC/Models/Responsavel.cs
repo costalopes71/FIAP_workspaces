@@ -10,7 +10,7 @@ namespace Fiap08.Web.MVC.Models
 
         public int ResponsavelId { get; set; }
         public string Nome { get; set; }
-        public string telefone { get; set; }
+        public string Telefone { get; set; }
 
         public IList<Dependente> ListaDependentes { get; set; }
 

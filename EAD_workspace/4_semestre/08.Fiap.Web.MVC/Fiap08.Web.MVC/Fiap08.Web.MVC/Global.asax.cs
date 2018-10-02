@@ -15,7 +15,7 @@ namespace Fiap08.Web.MVC
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<Aula08Context>);
+            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<Aula08Context>());
         }
     }
 }
