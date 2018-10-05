@@ -53,6 +53,12 @@ namespace Fiap08.Web.MVC.Controllers
             ViewBag.responsaveis = new SelectList(responsaveis, "ResponsavelId", "Nome");
         }
 
+        protected override void Dispose(bool disposing)
+        {
+            _unitOfWork.Dispose();
+            base.Dispose(disposing);
+        }
+
     }
 
 }

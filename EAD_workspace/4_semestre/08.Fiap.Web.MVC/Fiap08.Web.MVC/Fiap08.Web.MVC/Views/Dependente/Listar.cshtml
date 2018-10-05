@@ -23,9 +23,13 @@
 <table class="table table-hover">
 
     <thead>
-    <th>Nome</th>
-    <th>Data Nascimento</th>
-    <th>Responsável</th>
+        <tr>
+            <th>Nome</th>
+            <th>Data Nascimento</th>
+            <th>Responsável</th>
+            <th>Bolsista</th>
+            <th>Ações</th>
+        </tr>
     </thead>
 
     <tbody>
@@ -35,9 +39,48 @@
                 <td>@dependente.Nome</td>
                 <td>@dependente.DataNascimento.ToShortDateString()</td>
                 <td>@dependente.Responsavel.Nome</td>
+                <td>@(dependente.Bolsista ? "Sim" : "Não")</td>
+                <td>
+                    @if (dependente.Bolsista == false)
+                    {
+                        <button onclick="idConfirmar.value = @dependente.DependenteId" data-toggle="modal" data-target="#modalConfirmar"
+                                class="btn btn-success">
+                            Confirmar
+                        </button>
+                    } else
+                    {
+                        <button class="btn btn-success" disabled="disabled">
+                            Confirmar
+                        </button>
+                    }
+                </td>
             </tr>
         }
     </tbody>
 
 </table>
 
+<!-- Modal exclusao -->
+<div class="modal fade" id="modalConfirmar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Confirmar</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Deseja realmente confirmar o dependente como bolsista?
+            </div>
+            <div class="modal-footer">
+                @using (Html.BeginForm())
+                {
+                    <input type="hidden" name="codigo" id="idConfirmar" />
+                    <button type="submit" class="btn btn-success">Sim</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Não</button>
+                }
+            </div>
+        </div>
+    </div>
+</div>
