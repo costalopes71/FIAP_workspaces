@@ -47,7 +47,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cpj-l5-jA5"/>
+                                    <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vfz-Jo-VTB"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Fk-5f-Kpb">
@@ -58,7 +58,7 @@
                                     <color key="titleColor" red="0.014275224886084925" green="0.6801530116580311" blue="0.43020387507053159" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="signUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zEF-ar-GDS"/>
+                                    <action selector="signUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="olR-Xs-XzZ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -67,9 +67,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="Bem-vindo" id="ajX-SP-dKS"/>
                     <connections>
-                        <outlet property="tfEmail" destination="aSV-KB-0h5" id="Z6z-0j-JLb"/>
-                        <outlet property="tfNome" destination="9Ta-Hz-Ust" id="Vgo-f0-nm9"/>
-                        <outlet property="tfPassword" destination="5pZ-qg-tk3" id="Sh8-As-v5A"/>
+                        <outlet property="tfEmail" destination="aSV-KB-0h5" id="PoN-rz-rT7"/>
+                        <outlet property="tfName" destination="9Ta-Hz-Ust" id="1XO-Z7-Utl"/>
+                        <outlet property="tfPassword" destination="5pZ-qg-tk3" id="P8P-dI-aDA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -121,18 +121,22 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Lista de Compras" id="I3j-FA-rHY">
-                        <barButtonItem key="leftBarButtonItem" title="Logout" id="36J-yF-yKQ">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="sM4-db-Qsh">
                             <connections>
-                                <action selector="logout:" destination="TeR-KQ-ktG" id="5IP-DE-bVe"/>
+                                <action selector="logout:" destination="TeR-KQ-ktG" id="RU0-TY-463"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="XCO-aV-X8y"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="XCO-aV-X8y">
+                            <connections>
+                                <action selector="addItem:" destination="TeR-KQ-ktG" id="oSO-T1-FQh"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bdu-cl-Sdu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1380" y="-581.55922038980509"/>
+            <point key="canvasLocation" x="1394" y="-582"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OWs-Cr-LfJ">

@@ -11,18 +11,13 @@ import Firebase
 
 class ViewController: UIViewController {
 
+    
     @IBOutlet weak var tfEmail: UITextField!
     @IBOutlet weak var tfPassword: UITextField!
-    @IBOutlet weak var tfNome: UITextField!
+    @IBOutlet weak var tfName: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    
     }
 
     @IBAction func login(_ sender: UIButton) {
@@ -33,9 +28,7 @@ class ViewController: UIViewController {
             } else {
                 print(error!.localizedDescription)
             }
-            
         }
-        
     }
     
     @IBAction func signUp(_ sender: UIButton) {
@@ -46,20 +39,19 @@ class ViewController: UIViewController {
             } else {
                 print(error!.localizedDescription)
             }
-            
         }
     }
     
     func updateUserAndProceed() {
-        if tfNome.text!.isEmpty {
+        if tfName.text!.isEmpty {
             showMainScreen()
         } else {
-            guard let user = Auth.auth().currentUser else { return}
+            guard let user = Auth.auth().currentUser else {return}
             let changeRequest = user.createProfileChangeRequest()
-            changeRequest.displayName = tfNome.text!
+            changeRequest.displayName = tfName.text!
             changeRequest.commitChanges { (error) in
                 if error == nil {
-                    print("Nome atribuído com sucesso!")
+                    print("Nome atribuído com sucesso")
                 } else {
                     print(error!.localizedDescription)
                 }
@@ -71,6 +63,7 @@ class ViewController: UIViewController {
     func showMainScreen() {
         guard let mainVC = storyboard?.instantiateViewController(withIdentifier: "TableViewController") else {return}
         navigationController?.viewControllers = [mainVC]
+        
     }
     
 }

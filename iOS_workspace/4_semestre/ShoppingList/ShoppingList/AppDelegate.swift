@@ -20,7 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         
         if Auth.auth().currentUser != nil {
-            // se tiver usuario logado ja manda direto pra proxima pagina depois do login
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let mainVC = storyboard.instantiateViewController(withIdentifier: "TableViewController")
             let nc = window?.rootViewController as? UINavigationController
