@@ -1,0 +1,50 @@
+﻿@model PS.JOAO.RM78573.Models.Bebida
+
+@{
+    ViewBag.Title = "Cadastrar";
+}
+
+<h2>Cadastrar Bebida</h2>
+
+@if (TempData["msgSucesso"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["msgSucesso"]
+    </div>
+}
+
+@if (TempData["msgErro"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["msgSucesso"]
+    </div>
+}
+
+@using (@Html.BeginForm())
+{
+
+    <div class="form-group">
+        @Html.LabelFor(b => b.Nome)
+        @Html.TextBoxFor(b => b.Nome, new { @class = "form-control", placeholder = "Nome da bebida" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(b => b.DataValidade)
+        @Html.TextBoxFor(b => b.DataValidade, new { @class = "form-control", placeholder = "dd/mm/yyyy" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(b => b.Alcoolico)
+        @Html.CheckBoxFor(b => b.Alcoolico)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(b => b.Valor)
+        @Html.TextBoxFor(b => b.Valor, new { @class = "form-control", placeholder = "R$ 000.00" })
+    </div>
+
+    <div>
+        <input type="submit" value="Cadastrar" class="btn btn-primary" />
+    </div>
+
+}

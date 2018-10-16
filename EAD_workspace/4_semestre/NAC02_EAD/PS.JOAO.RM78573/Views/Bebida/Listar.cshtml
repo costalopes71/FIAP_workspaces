@@ -1,0 +1,72 @@
+﻿@{
+    ViewBag.Title = "Listar";
+}
+
+<h2>Listar</h2>
+
+@using (@Html.BeginForm("Pesquisar", "Bebida"))
+{
+
+    <div>
+        @Html.Label("Pesquisar")
+        @Html.TextBox("Nome")
+        <input type="submit" value="Pesquisar" class="btn btn-success" />
+    </div>
+}
+
+
+<table class="table table-hover">
+
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Data Validade</th>
+            <th>Alcoolico</th>
+            <th>Valor</th>
+            <th>Remover</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var bebida in ViewBag.Bebidas)
+        {
+            <tr>
+                <td>@bebida.Nome</td>
+                <td>@bebida.DataValidade</td>
+                <td>@(bebida.Alcoolico ? "Sim" : "Não")</td>
+                <td>@bebida.Valor</td>
+                <td>
+                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal" onclick="excluirBebida.value = @bebida.BebidaId">
+                        Remover
+                    </button>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Remover bebida</h4>
+            </div>
+            <div class="modal-body">
+                Tem certeza que deseja remover a bebida selecionada?
+            </div>
+            <div class="modal-footer">
+                @using (Html.BeginForm("Remover", "Bebida"))
+                {
+                    <input type="hidden" id="excluirBebida" name="codigo"/>
+                    <button type="submit" class="btn btn-danger">Remover</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
