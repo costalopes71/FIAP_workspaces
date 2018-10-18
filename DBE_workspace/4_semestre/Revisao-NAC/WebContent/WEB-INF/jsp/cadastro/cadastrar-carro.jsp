@@ -5,11 +5,25 @@
 
 <tags:template titulo="Cadastrar (NAC)">
 
-	<form:form action="<c:url value="/carro/cadastrar"/>" method="post" modelAttribute="carro">
+	<c:if test="${not empty msgErro}">
+		<div class="alert alert-danger">
+			${msgErro}
+		</div>
+	</c:if>
+	
+	<c:if test="${not empty msgSucesso}">
+		<div class="alert alert-success">
+			${msgSucesso}
+		</div>
+	</c:if>
+
+	<c:url value="/carro/cadastrar" var="action"/>
+	<form:form action="${action}" method="post" modelAttribute="carro">
 	
 		<div class="form-group">
 			<form:label path="modelo">Modelo</form:label>
 			<form:input path="modelo" cssClass="form-control" placeholder="Modelo do carro"/>
+			<form:errors path="modelo" class="text-danger"/>
 		</div>
 	
 		<div class="form-group">
@@ -20,9 +34,17 @@
 		<div class="form-group">
 			<form:label path="dataFabricacao">Data de Fabricação</form:label>
 			<form:input path="dataFabricacao" cssClass="form-control" placeholder="dd/mm/aaaa"/>
+			<form:errors path="dataFabricacao" cssClass="text-danger"/>
 		</div>
 		
-		<button class="btn btn-primary" type="submit">Cadastrar</button>
+		<div class="form-group">
+			<form:label path="marca">Marca</form:label>
+			<form:select path="marca.codigo" cssClass="form-control">
+				<form:options items="${marcas}" itemLabel="nome" itemValue="codigo"/>			
+			</form:select>
+		</div>
+		
+		<input class="btn btn-primary" type="submit" value="Cadastrar"/>
 	
 	</form:form>	
 

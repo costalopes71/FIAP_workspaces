@@ -29,11 +29,19 @@
 				<li class="nav-item dropdown"><a
 					class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 					role="button" data-toggle="dropdown" aria-haspopup="true"
-					aria-expanded="false">Produto</a>
+					aria-expanded="false">Carro</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="<c:url value="/carro/cadastrar"/>">Cadastrar</a> <a
-							class="dropdown-item" href="<c:url value="/carro/listar"/>">Listar</a>
-						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="<c:url value="/carro/cadastrar"/>">Cadastrar</a>
+						<a class="dropdown-item" href="<c:url value="/carro/listar"/>">Listar</a>
+					</div>
+				</li>
+				<li class="nav-item dropdown"><a
+					class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+					role="button" data-toggle="dropdown" aria-haspopup="true"
+					aria-expanded="false">Marca</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="<c:url value="/marca/cadastrar"/>">Cadastrar</a> 
+						<a class="dropdown-item" href="<c:url value="/marca/listar"/>">Listar</a>
 					</div>
 				</li>
 			</ul>

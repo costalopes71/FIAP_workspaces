@@ -6,10 +6,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.validation.constraints.Past;
 
-import org.springframework.format.annotation.DateTimeFormat;
+import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
 @Table(name="T_CARRO")
@@ -20,13 +23,18 @@ public class Carro {
 	@GeneratedValue(generator="carro",strategy=GenerationType.SEQUENCE)
 	private int codigo;
 	
+	@NotBlank
 	private String modelo;
 	
 	private boolean completo;
-	
-	@DateTimeFormat(pattern="dd/MM/yyyy")
+
+	@Past
 	private Calendar dataFabricacao;
 
+	@ManyToOne
+	@JoinColumn(name="id_marca", nullable=true)
+	private Marca marca;
+	
 	public int getCodigo() {
 		return codigo;
 	}
@@ -57,6 +65,14 @@ public class Carro {
 
 	public void setDataFabricacao(Calendar dataFabricacao) {
 		this.dataFabricacao = dataFabricacao;
+	}
+
+	public Marca getMarca() {
+		return marca;
+	}
+
+	public void setMarca(Marca marca) {
+		this.marca = marca;
 	}
 
 }
