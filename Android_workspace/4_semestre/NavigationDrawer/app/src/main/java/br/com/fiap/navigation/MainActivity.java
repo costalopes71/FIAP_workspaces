@@ -2,6 +2,8 @@ package br.com.fiap.navigation;
 
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -41,15 +43,24 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 
                 if (menuItem.getItemId() == R.id.mniHome) {
-                    // faz alguma coisa aqui
-                    Toast.makeText(MainActivity.this, "Home", Toast.LENGTH_SHORT).show();
+                    changeFragment(new HomeFragment());
                 } else {
-                    Toast.makeText(MainActivity.this, "Sobre", Toast.LENGTH_SHORT).show();
+                    changeFragment(new SobreFragment());
                 }
                 drawerLayout.closeDrawer(GravityCompat.START);
                 return false;
             }
         });
+
+    }
+
+    private void changeFragment(Fragment fragment) {
+
+        getSupportFragmentManager()
+            .beginTransaction()
+            .replace(R.id.fragmentWrapper, fragment)
+            .addToBackStack(null)
+            .commit();
 
     }
     

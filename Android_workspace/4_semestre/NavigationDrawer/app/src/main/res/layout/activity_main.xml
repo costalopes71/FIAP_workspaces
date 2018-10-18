@@ -17,6 +17,11 @@
             android:id="@+id/toolbar"
             android:background="@color/colorPrimary"/>
 
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/fragmentWrapper"/>
+
     </LinearLayout>
 
     <android.support.design.widget.NavigationView
