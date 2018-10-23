@@ -1,4 +1,4 @@
-﻿@model Fiap08.Web.MVC.Models.Responsavel
+﻿@model Fiap08.Web.MVC.ViewModels.ResponsavelViewModel
 
 @{
     ViewBag.Title = "Cadastrar";
@@ -25,15 +25,36 @@
 {
 
     <div class="form-group">
-        @Html.LabelFor(r => r.Nome)
-        @Html.TextBoxFor(r => r.Nome, new { @class = "form-control", placeholder = "Nome do responsável" })
+        @Html.LabelFor(r => r.Responsavel.Nome)
+        @Html.TextBoxFor(r => r.Responsavel.Nome, new { @class = "form-control", placeholder = "Nome do responsável" })
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(r => r.Telefone)
-        @Html.TextBoxFor(r => r.Telefone, new { @class = "form-control", placeholder = "Digite o telefone" })
+        @Html.LabelFor(r => r.Responsavel.Telefone)
+        @Html.TextBoxFor(r => r.Responsavel.Telefone, new { @class = "form-control", placeholder = "Digite o telefone" })
     </div>
 
     <input type="submit" class="btn btn-primary" value="Cadastrar" />
 
 }
+
+<table class="table table-hover">
+
+    <thead>
+        <tr>
+            <td>Nome</td>
+            <td>Telefone</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var resp in Model.Responsaveis)
+        {
+            <tr>
+                <td>@resp.Nome</td>
+                <td>@resp.Telefone</td>
+            </tr>
+        }
+    </tbody>
+
+</table>

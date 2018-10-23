@@ -124,6 +124,8 @@
     <Compile Include="Repositories\IResponsavelRepository.cs" />
     <Compile Include="Repositories\ResponsavelRepository.cs" />
     <Compile Include="Units\UnitOfWork.cs" />
+    <Compile Include="ViewModels\DependenteViewModel.cs" />
+    <Compile Include="ViewModels\ResponsavelViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />

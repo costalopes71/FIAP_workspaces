@@ -1,5 +1,6 @@
 ﻿using Fiap08.Web.MVC.Models;
 using Fiap08.Web.MVC.Units;
+using Fiap08.Web.MVC.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,8 +17,10 @@ namespace Fiap08.Web.MVC.Controllers
         // GET: Dependente
         public ActionResult Cadastrar()
         {
-            CarregarComboResponsaveis();
-            return View();
+            var viewModel = new DependenteViewModel();
+            var lista = _unitOfWork.ResponsavelRepository.Listar();
+            viewModel.Responsaveis = new SelectList(lista, "ResponsavelId", "Nome");
+            return View(viewModel);
         }
 
         [HttpPost]
@@ -40,17 +43,8 @@ namespace Fiap08.Web.MVC.Controllers
         [HttpGet]
         public ActionResult Listar()
         {
-
             var dependentes = _unitOfWork.DependenteRepository.Listar();
-            CarregarComboResponsaveis();
-
             return View(dependentes);
-        }
-
-        private void CarregarComboResponsaveis()
-        {
-            var responsaveis = _unitOfWork.ResponsavelRepository.Listar();
-            ViewBag.responsaveis = new SelectList(responsaveis, "ResponsavelId", "Nome");
         }
 
         protected override void Dispose(bool disposing)

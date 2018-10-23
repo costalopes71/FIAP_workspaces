@@ -1,5 +1,6 @@
 ﻿using Fiap08.Web.MVC.Models;
 using Fiap08.Web.MVC.Units;
+using Fiap08.Web.MVC.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +17,10 @@ namespace Fiap08.Web.MVC.Controllers
         // GET: Responsavel
         public ActionResult Cadastrar()
         {
-            return View();
+
+            ResponsavelViewModel viewModel = new ResponsavelViewModel();
+            viewModel.Responsaveis = _unit.ResponsavelRepository.Listar();
+            return View(viewModel);
         }
 
         [HttpPost]

@@ -41,7 +41,7 @@ namespace Fiap08.Web.MVC.Repositories
 
         public IList<Dependente> Listar()
         {
-            return _context.Dependentes.ToList();
+            return _context.Dependentes.Include("Responsavel").ToList();
         }
 
         public void Remover(int codigo)

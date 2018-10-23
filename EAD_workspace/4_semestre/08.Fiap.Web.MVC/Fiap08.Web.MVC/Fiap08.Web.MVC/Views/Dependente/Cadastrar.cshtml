@@ -1,4 +1,4 @@
-﻿@model Fiap08.Web.MVC.Models.Dependente
+﻿@model Fiap08.Web.MVC.ViewModels.DependenteViewModel
 
 @{
     ViewBag.Title = "Cadastrar";
@@ -10,19 +10,19 @@
 {
 
     <div class="form-group">
-        @Html.LabelFor(d => d.Nome)
-        @Html.TextBoxFor(d => d.Nome, new { @class = "form-control", placeholder = "Digite o nome do dependente" })
+        @Html.LabelFor(d => d.Dependente.Nome)
+        @Html.TextBoxFor(d => d.Dependente.Nome, new { @class = "form-control", placeholder = "Digite o nome do dependente" })
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(d => d.DataNascimento)
-        @Html.TextBoxFor(d => d.DataNascimento, new { @class = "form-control", placeholder = "dd/mm/yyyy" })
+        @Html.LabelFor(d => d.Dependente.DataNascimento)
+        @Html.TextBoxFor(d => d.Dependente.DataNascimento, new { @class = "form-control", placeholder = "dd/mm/yyyy" })
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(d => d.Responsavel)
-        @Html.DropDownListFor(d => d.ResponsavelId,
-            ViewBag.responsaveis as SelectList,
+        @Html.LabelFor(d => d.Dependente.Responsavel)
+        @Html.DropDownListFor(d => d.Dependente.ResponsavelId,
+            Model.Responsaveis as SelectList,
             "Selecione",
             new {@class = "form-control" })
     </div>
