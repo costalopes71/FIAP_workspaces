@@ -26,6 +26,7 @@
 				<th>Completo</th>
 				<th>Data Fabricação</th>
 				<th>Marca</th>
+				<th>Combustível</th>
 			</tr>
 		</thead>
 		
@@ -38,6 +39,7 @@
 						<fmt:formatDate value="${carro.dataFabricacao.time}" pattern="dd/MM/yyyy"/>
 					</td>
 					<td>${carro.marca.nome}</td>
+					<td>${carro.combustivel.label}</td>
 				</tr>
 			</c:forEach>		
 		</tbody>

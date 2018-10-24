@@ -35,6 +35,8 @@ public class Carro {
 	@JoinColumn(name="id_marca", nullable=true)
 	private Marca marca;
 	
+	private Combustivel combustivel;
+	
 	public int getCodigo() {
 		return codigo;
 	}
@@ -73,6 +75,14 @@ public class Carro {
 
 	public void setMarca(Marca marca) {
 		this.marca = marca;
+	}
+
+	public Combustivel getCombustivel() {
+		return combustivel;
+	}
+
+	public void setCombustivel(Combustivel combustivel) {
+		this.combustivel = combustivel;
 	}
 
 }

@@ -44,6 +44,14 @@
 			</form:select>
 		</div>
 		
+		<div class="form-group">
+			<form:label path="combustivel">Combustível</form:label>
+			<form:select path="combustivel" cssClass="form-control">
+				<form:option value="0">Selecione</form:option>
+				<form:options items="${combustiveis}" itemLabel="label"/>
+			</form:select>
+		</div>
+		
 		<input class="btn btn-primary" type="submit" value="Cadastrar"/>
 	
 	</form:form>	

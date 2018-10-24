@@ -15,9 +15,10 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import br.com.dbe.revisaonac.dao.CarroDAO;
 import br.com.dbe.revisaonac.dao.MarcaDAO;
 import br.com.dbe.revisaonac.model.Carro;
+import br.com.dbe.revisaonac.model.Combustivel;
 
 @Controller
-@RequestMapping("carro")
+@RequestMapping(value= {"carro", "/", ""})
 public class CarroController {
 
 	@Autowired
@@ -26,9 +27,18 @@ public class CarroController {
 	@Autowired
 	private MarcaDAO marcaDAO;
 	
-	@GetMapping("cadastrar")
+	@GetMapping(value= {"cadastrar", "", "/"})
 	public ModelAndView cadastrar(Carro carro) {
-		return new ModelAndView("cadastro/cadastrar-carro").addObject("marcas", marcaDAO.listar());
+		ModelAndView model = new ModelAndView("cadastro/cadastrar-carro");
+		
+		try {
+			model.addObject("marcas", marcaDAO.listar());
+			model.addObject("combustiveis", Combustivel.values());
+		} catch (Exception e) {
+			model.addObject("msgErro", "Erro ao tentar carregar o combo com as marcas. ERRO: " + e.getMessage());
+		}
+		
+		return model;
 	}
 	
 	@PostMapping("cadastrar")
