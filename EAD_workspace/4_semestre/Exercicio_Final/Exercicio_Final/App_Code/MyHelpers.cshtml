@@ -1,0 +1,15 @@
+﻿@helper Message(string msg)
+{
+    @if (msg != null)
+    {
+        <div class="alert alert-success">
+            @msg
+        </div>
+    }
+
+}
+
+@helper Submit(string name, String classe)
+{
+<input type="submit" name="@name" class=“@classe" />
+}
