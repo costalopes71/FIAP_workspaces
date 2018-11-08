@@ -1,0 +1,26 @@
+﻿@model JogosOnline.Models.Genero
+
+@{
+    ViewBag.Title = "Cadastrar Gênero";
+}
+
+<h2>Cadastrar Gênero</h2>
+
+@if (TempData["msg"] != null)
+{
+
+    @MyHelper.Message(@TempData["msg"].ToString())
+
+}
+
+@using (Html.BeginForm())
+{
+
+    <div class="form-group">
+        @Html.LabelFor(g => g.Nome)
+        @Html.TextBoxFor(g => g.Nome, new {@class = "form-control", placeholder = "Nome do gênero" })
+    </div>
+
+    @MyHelper.CriarSubmit("Cadastrar", "btn btn-primary")
+
+}

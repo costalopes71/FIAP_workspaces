@@ -1,0 +1,121 @@
+﻿@model List<JogosOnline.Models.Jogo>
+
+
+@{
+    ViewBag.Title = "Listar Jogos";
+}
+
+<h2>Listar Jogos</h2>
+
+@if (TempData["msg"] != null)
+{
+    @MyHelper.Message(@TempData["msg"].ToString())
+}
+
+
+<div class="row">
+    <div class="col-md-5">
+        @using (Html.BeginForm("PesquisarPorNome", "Jogo", FormMethod.Get, new { @class = "form-inline" }))
+        {
+
+            <input name="nome" type="text" class="form-control" placeholder="Digite o nome" />
+            @MyHelper.CriarSubmit("Pesquisar por Nome", "btn btn-default")
+
+        }
+    </div>
+    <div class="col-md-5">
+        @using (Html.BeginForm("PesquisarPorGenero", "Jogo", FormMethod.Get, new { @class = "form-inline" }))
+        {
+            @Html.DropDownList("id", ViewBag.Generos as SelectList, "Selecione", new { @class = "form-control" })
+            @MyHelper.CriarSubmit("Pesquisar por Genero", "btn btn-default")
+
+        }
+    </div>
+</div>
+
+    <table class="table table-hover">
+
+        <thead>
+        <th>Nome</th>
+        <th>Data Lançamento</th>
+        <th>Plataforma</th>
+        <th>Gênero</th>
+        <th>Disponível</th>
+        <th>Ações</th>
+        </thead>
+
+        <tbody>
+
+            @foreach (var jogo in Model)
+            {
+                <tr>
+                    <td>@jogo.Nome</td>
+                    <td>@jogo.DataLancamento.ToShortDateString()</td>
+                    <td>@jogo.Plataforma</td>
+                    <td>@jogo.Genero.Nome</td>
+                    <td>@(jogo.Disponivel ? "Sim" : "Não")</td>
+                    <td>
+                        @if (!jogo.Disponivel)
+                        {
+                            @Html.ActionLink("Editar", "Atualizar", new { @codigo = jogo.JogoId }, new { @class = "btn btn-primary btn-sm" })
+                            <button onclick="excluirCodigo.value = @jogo.JogoId" type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modalExcluir">
+                                Excluir
+                            </button>
+                            <button onclick="disponivelCodigo.value = @jogo.JogoId" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#modalDisponibilizar">
+                                Disponibilizar
+                            </button>
+                        }
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+
+    </table>
+
+
+    <!-- Modal Excluir-->
+    <div class="modal fade" id="modalExcluir" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Confirmação</h4>
+                </div>
+                <div class="modal-body">
+                    Deseja realmente excluir o jogo selecionado?
+                </div>
+                <div class="modal-footer">
+                    @using (Html.BeginForm("Remover", "Jogo"))
+                    {
+                        <input type="hidden" name="codigo" id="excluirCodigo" />
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Não</button>
+                        <button type="submit" class="btn btn-danger">Sim</button>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Disponibilizar -->
+    <div class="modal fade" id="modalDisponibilizar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Confirmação</h4>
+                </div>
+                <div class="modal-body">
+                    Deseja realmente disponibilizar o jogo selecionado?
+                </div>
+                <div class="modal-footer">
+                    @using (Html.BeginForm("Disponibilizar", "Jogo"))
+                    {
+                        <input type="hidden" name="codigo" id="disponivelCodigo" />
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Não</button>
+                        <button type="submit" class="btn btn-success">Sim</button>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>

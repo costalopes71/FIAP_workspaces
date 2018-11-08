@@ -1,0 +1,35 @@
+﻿@model JogosOnline.ViewModels.JogoViewModel
+
+
+@{
+    ViewBag.Title = "Cadastrar Jogo";
+}
+
+<h2>Cadastrar Jogo</h2>
+
+@using (Html.BeginForm())
+{
+
+    <div class="form-group">
+        @Html.LabelFor(j => j.Jogo.Nome)
+        @Html.TextBoxFor(j => j.Jogo.Nome, new {@class = "form-control", placeholder = "Nome do jogo" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(j => j.Jogo.DataLancamento)
+        @Html.TextBoxFor(j => j.Jogo.DataLancamento, new {@class = "form-control", placeholder = "dd/mm/aaaa" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(j => j.Jogo.Plataforma)
+        @Html.EnumDropDownListFor(j => j.Jogo.Plataforma, "Selecione", new {@class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(j => j.Jogo.Genero)
+        @Html.DropDownListFor(j => j.Jogo.GeneroId, Model.Generos, "Selecione", new {@class = "form-control" })
+    </div>
+
+    @MyHelper.CriarSubmit("Cadastrar", "btn btn-primary")
+
+}
