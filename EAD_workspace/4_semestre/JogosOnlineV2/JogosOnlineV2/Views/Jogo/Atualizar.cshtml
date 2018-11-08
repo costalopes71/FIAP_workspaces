@@ -1,0 +1,35 @@
+﻿@model JogosOnlineV2.Models.Jogo
+
+@{
+    ViewBag.Title = "Atualizar Jogo";
+}
+
+<h2>Atualizar Jogo</h2>
+
+@using (Html.BeginForm())
+{
+
+    @Html.HiddenFor(j => j.JogoId)
+
+    <div class="form-group">
+        @Html.LabelFor(j => j.Nome)
+        @Html.TextBoxFor(j => j.Nome, new { @class = "form-control"})
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(j => j.DataLancamento)
+        @Html.TextBoxFor(j => j.DataLancamento, "{0:dd/MM/yyyy}", new { @class = "form-control"})
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(j => j.Plataforma)
+        @Html.EnumDropDownListFor(j => j.Plataforma, "Selecione", new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(j => j.Genero)
+        @Html.DropDownListFor(j => j.GeneroId, ViewBag.Generos as SelectList, "Selecione", new { @class = "form-control" })
+    </div>
+
+    @MyHelper.Submit("Atualizar", "btn btn-primary")
+}

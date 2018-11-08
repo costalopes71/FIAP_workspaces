@@ -1,0 +1,33 @@
+﻿@model JogosOnlineV2.Models.Jogo
+
+@{
+    ViewBag.Title = "Cadastrar Jogo";
+}
+
+<h2>Cadastrar Jogo</h2>
+
+@using (Html.BeginForm())
+{
+
+    <div class="form-group">
+        @Html.LabelFor(j => j.Nome)
+        @Html.TextBoxFor(j => j.Nome, new {@class = "form-control", placeholder = "Nome do jogo" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(j => j.DataLancamento)
+        @Html.TextBoxFor(j => j.DataLancamento, "{0:dd/MM/yyyy}", new {@class = "form-control", placeholder = "dd/mm/aaaa"})
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(j => j.Plataforma)
+        @Html.EnumDropDownListFor(j => j.Plataforma, "Selecione", new {@class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(j => j.Genero)
+        @Html.DropDownListFor(j => j.GeneroId, ViewBag.Generos as SelectList, "Selecione", new {@class = "form-control" })
+    </div>
+
+    @MyHelper.Submit("Cadastrar", "btn btn-primary")
+}
